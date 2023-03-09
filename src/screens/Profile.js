@@ -1,11 +1,14 @@
 import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import Navigation from './Navigation';
 
-const App = () => {
-  return <Navigation />;
+const Profile = () => {
+  return (
+    <SafeAreaView>
+      <Text>Profile</Text>
+    </SafeAreaView>
+  );
 };
 
-export default App;
+export default Profile;
 
 const styles = StyleSheet.create({});
