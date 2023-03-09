@@ -11,7 +11,7 @@ import ActionName from '../redux/reducers/ActionName';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AsyncStorageKeys from '../constants/AsyncStorageKeys';
 
-const Login = () => {
+const Login = ({navigation}) => {
   const dispatch = useDispatch();
   return (
     <SafeAreaView>
@@ -21,6 +21,14 @@ const Login = () => {
           AsyncStorage.setItem(AsyncStorageKeys.isLogin, 'yes');
         }}>
         <Text>Login</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Regitser', {
+            contenu: 'Go my Code',
+          });
+        }}>
+        <Text>Go to Register</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

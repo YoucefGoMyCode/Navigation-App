@@ -11,9 +11,11 @@ import {useDispatch} from 'react-redux';
 import ActionName from '../redux/reducers/ActionName';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import AsyncStorageKeys from '../constants/AsyncStorageKeys';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
   const dispatch = useDispatch();
+  const navigation = useNavigation();
   return (
     <SafeAreaView>
       <TouchableOpacity
@@ -22,6 +24,12 @@ const Home = () => {
           AsyncStorage.removeItem(AsyncStorageKeys.isLogin);
         }}>
         <Text>Logout</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate('Profile');
+        }}>
+        <Text>Go to profile</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );
